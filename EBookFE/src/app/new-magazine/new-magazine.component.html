@@ -1,0 +1,129 @@
+<!--<div *ngIf="!show">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate>
+  
+    <div *ngFor="let field of formFields" >
+        <label for={{field.id}}>{{field.label}}</label>
+        <input type="text" name={{field.id}} ngModel  *ngIf="field.type.name=='string'" >
+        <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'">
+        <input type="number" name={{field.id}} ngModel  *ngIf="field.type.name=='long'">
+        <ng-multiselect-dropdown *ngIf="field.id=='payment'"
+            [placeholder]="'Choose method of payments'"
+            [data]="enumPaymentsValues"
+            [(ngModel)]="selectedPayment"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            name="payment">
+        </ng-multiselect-dropdown>
+        <ng-multiselect-dropdown *ngIf="field.id=='scientificFields'"
+            [placeholder]="'Choose scientific fields'"
+            [data]="enumSciFieldsValues"
+            [(ngModel)]="selectedSciFields"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+            name="scientificFields">
+        </ng-multiselect-dropdown>
+    </div>
+    <input type="submit">
+  </form>
+  </div>
+
+  <div *ngIf="show">
+
+    <form #f="ngForm" (ngSubmit)="onSubmitEditorsAndREviewers(f.value, f)" ngNativeValidate>
+    
+      <div *ngFor="let field of formFields1" >
+          <label for={{field.id}}>{{field.label}}</label>
+          <input type="text" name={{field.id}} ngModel  *ngIf="field.type.name=='string'" >
+          <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'">
+          <input type="number" name={{field.id}} ngModel  *ngIf="field.type.name=='long'">
+          <ng-multiselect-dropdown *ngIf="field.id=='reviewers'"
+              [placeholder]="'Choose reviewers'"
+              [data]="enumReviewersValues"
+              [(ngModel)]="selectedReviewers"
+              [settings]="dropdownSettings"
+              (onSelect)="onItemSelect($event)"
+              (onSelectAll)="onSelectAll($event)"
+              name="reviewers">
+          </ng-multiselect-dropdown>
+          <ng-multiselect-dropdown *ngIf="field.id=='editors'"
+              [placeholder]="'Choose editors'"
+              [data]="enumEditorsValues"
+              [(ngModel)]="selectedEditors"
+              [settings]="dropdownSettings"
+              (onSelect)="onItemSelect($event)"
+              (onSelectAll)="onSelectAll($event)"
+              name="editors">
+          </ng-multiselect-dropdown>
+      </div>
+      <input type="submit">
+    </form>
+</div>-->
+
+<div *ngIf="!show">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate style="margin-left: 550px;margin-top: 5px;">
+    
+      <div *ngFor="let field of formFields" class="control-group" >
+          <label class="control-label"  for={{field.id}}>{{field.label}}</label>
+          <div class="controls">
+          <input type="text" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;"  *ngIf="field.type.name=='string'" >
+          <input type="checkbox" name={{field.id}} ngModel  class="input-xlarge"  *ngIf="field.type.name=='boolean'">
+          <input type="number" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;" *ngIf="field.type.name=='long'">
+          <ng-multiselect-dropdown *ngIf="field.id=='payment'" class="custom-font-size"
+              [placeholder]="'Choose method of payments'"
+              [data]="enumPaymentsValues"
+              [(ngModel)]="selectedPayment"
+              [settings]="dropdownSettingsPayment"
+              (onSelect)="onItemSelect($event)"
+              (onSelectAll)="onSelectAll($event)"
+              name="payment">
+          </ng-multiselect-dropdown>
+          <ng-multiselect-dropdown *ngIf="field.id=='scientificFields'" class="custom-font-size"
+              [placeholder]="'Choose scientific fields'"
+              [data]="enumSciFieldsValues"
+              [(ngModel)]="selectedSciFields"
+              [settings]="dropdownSettings"
+              (onSelect)="onItemSelect($event)"
+              (onSelectAll)="onSelectAll($event)"
+              name="scientificFields">
+          </ng-multiselect-dropdown>
+        </div>
+      </div>
+      <input type="submit" style="margin-top: 10px;">
+    </form>
+    </div>
+  
+    <div *ngIf="show">
+  
+      <form #f="ngForm" class="form-horizontal" (ngSubmit)="onSubmitEditorsAndREviewers(f.value, f)" ngNativeValidate style="margin-left: 550px;margin-top: 5px;">
+      
+        <div *ngFor="let field of formFields1" class="control-group" >
+            <label class="control-label"  for={{field.id}}>{{field.label}}</label>
+            <div class="controls">
+            <input type="text" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;" *ngIf="field.type.name=='string'" >
+            <input type="checkbox" name={{field.id}} ngModel class="input-xlarge"  *ngIf="field.type.name=='boolean'">
+            <input type="number" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;" *ngIf="field.type.name=='long'">
+            <ng-multiselect-dropdown *ngIf="field.id=='reviewers'" class="custom-font-size"
+                [placeholder]="'Choose reviewers'"
+                [data]="enumReviewersValues"
+                [(ngModel)]="selectedReviewers"
+                [settings]="dropdownSettings"
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+                name="reviewers">
+            </ng-multiselect-dropdown>
+            <ng-multiselect-dropdown *ngIf="field.id=='editors'" class="custom-font-size"
+                [placeholder]="'Choose editors'"
+                [data]="enumEditorsValues"
+                [(ngModel)]="selectedEditors"
+                [settings]="dropdownSettings"
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+                name="editors">
+            </ng-multiselect-dropdown>
+        </div>
+        </div>
+        <input type="submit" style="margin-top: 10px;">
+      </form>
+  </div>

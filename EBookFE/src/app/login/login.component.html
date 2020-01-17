@@ -1,0 +1,24 @@
+<!--<div id="login-box">
+  <div class="left">
+    <h1>Login</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)">
+      <input type="text" name="username" ngModel Placeholder="Username">
+      <input type="password" name="password" ngModel Placeholder="Password">
+  
+  <input type="submit">
+</form>
+</div>
+</div>-->
+
+<div class="wrapper fadeInDown" style="margin-top: 100px;">
+  <div id="formContent">
+
+    <!-- Login Form -->
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)">
+      <input type="text" class="fadeIn second" name="username" ngModel Placeholder="Username">
+      <input type="text" name="password" ngModel Placeholder="Password" class="fadeIn third" >
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+  </div>
+</div>

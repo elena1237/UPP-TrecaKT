@@ -1,0 +1,28 @@
+<!--<div id="login-box">
+  <div class="left">
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate>
+
+    <div *ngFor="let field of formFields" class='form'>
+        <label for={{field.id}}>{{field.label}}</label>
+        <input type="text" name={{field.id}} ngModel  *ngIf="field.type.name=='string'" [(ngModel)]="field.defaultValue" readonly>
+        <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'">
+        <input type="number" name={{field.id}} ngModel  *ngIf="field.type.name=='long'" [(ngModel)]="field.defaultValue" readonly>
+    </div>
+    <input type="submit">
+  </form>
+</div>
+</div>-->
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate class="form-horizontal" style="margin-left: 550px;margin-top: 5px;">
+
+  <div *ngFor="let field of formFields" class='form' class="control-group">
+      <label class="control-label" for={{field.id}}>{{field.label}}</label>
+      <div class="controls">
+      <input type="text" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;"  *ngIf="field.type.name=='string'" [(ngModel)]="field.defaultValue" readonly>
+      <input type="checkbox" name={{field.id}} ngModel class="input-xlarge" *ngIf="field.type.name=='boolean'">
+      <input type="number" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;" *ngIf="field.type.name=='long'" [(ngModel)]="field.defaultValue" readonly>
+    </div>
+    </div>
+  <input type="submit" style="margin-top: 10px;">
+</form>

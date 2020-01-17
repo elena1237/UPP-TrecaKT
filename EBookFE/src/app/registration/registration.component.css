@@ -1,0 +1,3 @@
+ng-multiselect-dropdown /deep/ .multiselect-dropdown > .dropdown-btn{
+    width:400px !important;
+ }
