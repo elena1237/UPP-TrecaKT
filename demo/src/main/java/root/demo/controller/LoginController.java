@@ -1,5 +1,7 @@
 package root.demo.controller;
 
+import org.camunda.bpm.engine.TaskService;
+import org.camunda.bpm.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,14 +22,17 @@ public class LoginController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    TaskService taskService;
+
     @GetMapping(path = "/{username}/{password}", produces = "application/json")
     public @ResponseBody
     ResponseEntity getLogin(@PathVariable String username, @PathVariable String password) {
         List<User> allUsers = userRepository.findAll();
         User user = new User();
 
-        for(User userDB:allUsers){
-            if(userDB.getUsername().equals(username) && userDB.getPassword().equals(password)){
+        for(User userDB:allUsers) {
+            if (userDB.getUsername().equals(username) && userDB.getPassword().equals(password)) {
                 user = userDB;
                 break;
             }

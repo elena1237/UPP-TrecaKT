@@ -31,8 +31,11 @@ public class User {
     private String role;
     @Column(name = "hashCode")
     private String hashCode;
+    @Column(name = "dues")
+    private Boolean dues;
 
-    public User(String name, String lastName, String city, String country, String title, String email, String username, String password, String role, String hashCode, String scientificFields) {
+
+    public User(String name, String lastName, String city, String country, String title, String email, String username, String password, String role, String hashCode, String scientificFields,Boolean dues) {
         this.name = name;
         this.lastName = lastName;
         this.city = city;
@@ -44,6 +47,7 @@ public class User {
         this.role = role;
         this.hashCode = hashCode;
         this.scientificFields = scientificFields;
+        this.dues = dues;
     }
 
     public User() {
@@ -143,5 +147,13 @@ public class User {
 
     public void setHashCode(String hashCode) {
         this.hashCode = hashCode;
+    }
+
+    public Boolean getDues() {
+        return dues;
+    }
+
+    public void setDues(Boolean dues) {
+        this.dues = dues;
     }
 }

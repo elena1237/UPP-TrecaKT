@@ -1,0 +1,22 @@
+<form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate style="margin-left: 550px;margin-top: 5px;">
+  <fieldset>
+    <div *ngFor="let field of formFields" class="control-group">
+      <label class="control-label" for={{field.id}}>{{field.label}}</label>
+      <div class="controls">
+      <input type="text" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;"  *ngIf="field.type.name=='string'" >
+      <input type="checkbox" name={{field.id}} ngModel class="input-xlarge"  *ngIf="field.type.name=='boolean'">
+      <input type="number" name={{field.id}} ngModel class="input-xlarge" style="width: 400px;" *ngIf="field.type.name=='long'">
+      <ng-multiselect-dropdown *ngIf="field.type.name=='enum'" class="custom-font-size" 
+          [placeholder]="'Choose scientific fields'"
+          [data]="enumValues"
+          [(ngModel)]="selectedItems"
+          [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)"
+          (onSelectAll)="onSelectAll($event)"
+          name="scientificFields">
+      </ng-multiselect-dropdown>
+    </div>
+  </div>
+  <input type="submit" style="margin-top: 10px;"> 
+  </fieldset>
+</form>

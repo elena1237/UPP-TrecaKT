@@ -65,9 +65,7 @@ public class DummyController {
 
 	@GetMapping(path = "/getRez/{processInstanceId}", produces = "application/json")
 	public @ResponseBody String getRez(@PathVariable String processInstanceId) {
-
 		Boolean rez = (Boolean)runtimeService.getVariable(processInstanceId, "rez");
-
 		return rez.toString();
 	}
 

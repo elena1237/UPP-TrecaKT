@@ -65,6 +65,9 @@ public class MagazineController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
+
+
     @PostMapping(path = "/addEditorsAndReviewers/{taskId}", produces = "application/json")
     public @ResponseBody
     ResponseEntity addEditorsAndReviewers(@RequestBody List<FormSubmissionDto> dto, @PathVariable String taskId) {

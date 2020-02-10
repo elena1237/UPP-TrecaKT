@@ -35,11 +35,17 @@ public class Magazine {
     @Column(name = "editors")
     String editors;
 
-    public Magazine(String name, Long issn, String scientificFields, String payment) {
+    @Column(name = "open_access")
+    Boolean open_access;
+
+
+
+    public Magazine(String name, Long issn, String scientificFields, String payment,Boolean open_access) {
         this.name = name;
         this.issn = issn;
         this.scientificFields = scientificFields;
         this.payment = payment;
+        this.open_access=open_access;
     }
 
     public Magazine() {
@@ -115,5 +121,13 @@ public class Magazine {
 
     public void setEditors(String editors) {
         this.editors = editors;
+    }
+
+    public Boolean getOpen_access() {
+        return open_access;
+    }
+
+    public void setOpen_access(Boolean open_access) {
+        this.open_access = open_access;
     }
 }

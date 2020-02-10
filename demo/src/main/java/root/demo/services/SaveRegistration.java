@@ -47,7 +47,7 @@ public class SaveRegistration implements JavaDelegate {
             sciFieldsToString = sciFieldsToString.substring(0, sciFieldsToString.length() - 1);
         }
 
-        User user = new User(name,lastName,city,country,title,email,username,password,"","",sciFieldsToString);
+        User user = new User(name,lastName,city,country,title,email,username,password,"","",sciFieldsToString,false);
 
         if(reviewer.equals("true")){
             user.setRole("reviewer");

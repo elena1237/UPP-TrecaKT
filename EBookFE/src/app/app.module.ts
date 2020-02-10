@@ -22,6 +22,10 @@ import { NewMagazineComponent } from './new-magazine/new-magazine.component';
 import { ActivateMagazineComponent } from './activate-magazine/activate-magazine.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ProcessTextComponent } from './processtext/processtext.component';
+import { PayduesComponent } from './paydues/paydues.component';
+import { EnterDataOfSciWorkComponent } from './enter-data-of-sci-work/enter-data-of-sci-work.component';
+import { ChiefEditorReviewComponent } from './chief-editor-review/chief-editor-review.component';
 
 const ChildRoutes =
   [
@@ -62,7 +66,27 @@ const Routes = [
     path: "home",
     component: HomeComponent,
     canActivate: [Notauthorized]
-  }
+  },
+  {
+    path: "processtext",
+    component: ProcessTextComponent,
+    canActivate: [Notauthorized]
+  },
+  {
+    path: "paydues",
+    component: PayduesComponent,
+    canActivate: [Notauthorized]
+  },
+  {
+    path: "enterdata",
+    component: EnterDataOfSciWorkComponent,
+    canActivate: [Notauthorized]
+  },
+  {
+    path: "chiefeditorrev",
+    component: ChiefEditorReviewComponent,
+    canActivate: [Notauthorized]
+  },
 ]
 
 
@@ -74,7 +98,11 @@ const Routes = [
     NewMagazineComponent,
     ActivateMagazineComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ProcessTextComponent,
+    PayduesComponent,
+    EnterDataOfSciWorkComponent,
+    ChiefEditorReviewComponent
   ],
   imports: [
     BrowserModule,

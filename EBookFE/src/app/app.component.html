@@ -1,6 +1,7 @@
 <nav class="navbar navbar-light bg-light"> 
     <a class="navbar-brand" [routerLink]="['/login']" *ngIf="notLoggedIn()" >Login</a>
     <a class="navbar-brand" [routerLink]="['/registrate']" *ngIf="notLoggedIn()">Registrate</a>  
+    <a class="navbar-brand" [routerLink]="['/processtext']" *ngIf="loggedIn()">Process Text</a>  
     <a class="navbar-brand" [routerLink]="['/confirme']" *ngIf="isAdmin()">Confirme reviewer</a> 
     <a class="navbar-brand" [routerLink]="['/new-magazine']" *ngIf="isEditor()"> New magazine </a> 
     <a class="navbar-brand" [routerLink]="['/activate-magazine']" *ngIf="isAdmin()">Activate magazine</a> 
